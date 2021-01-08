@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% block content %}
+        {% for x in obj reversed %}
+            {% if forloop.first %}
+                <p>{{ x.name }}</p>
+            {% endif %}
+        {% endfor %}
+        <a href="{% url 'edit' %}">Editprofile</a>
+		{% for x in img %}
+		<div></div>
+		<img src="{{ x.photo.url }}">
+		{% endfor %}
+	{% endblock %}
+</body>
+</html>

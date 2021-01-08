@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="background-image: linear-gradient(to right, #833ab4 , #fd1d1d , #fcb045);">
+	<center>
+	{%block content%}
+	<img src="https://assets.stickpng.com/images/5a4e432a2da5ad73df7efe7a.png" height="100px;">
+		<form action="" method="POST">
+			{% csrf_token %}
+			<input type="text" name="name" maxlength="300" id="id_name" placeholder="Username" style="font-size: 25px;">
+			<input type="submit" name="" value="Change" style="font-size: 25px; margin-top: 200px ; border-radius: 20px; border:0px; background-color: #00a8ff; color: white; ">
+		</form>
+	{% endblock %}
+	</center>
+</body>
+</html>
+		

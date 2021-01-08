@@ -1,0 +1,21 @@
+{% extends 'index.html'%}
+	{% block content %}
+	<body style="background-image: linear-gradient(to right, #833ab4 , #fd1d1d , #fcb045);">
+		<form method ="POST">
+			{% csrf_token %}
+			<center>
+				<div class="mastercontainer" style="border-radius: 50px; margin-top: 150px;height: 350px;
+				width: 500px; background-color:white;">
+				<img src="https://assets.stickpng.com/images/5a4e432a2da5ad73df7efe7a.png" height="100px;">
+				<p>
+				<input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username"autofocus required id="id_username" style="font-size: 20px;" placeholder="username"></p>
+				<p>
+				<input type="password" name="password1" autocomplete="new-password" required id="id_password1" style="font-size: 20px;" placeholder="password"></p>
+				<p> 
+				<input type="password" name="password2" autocomplete="new-password" required id="id_password2" style="font-size: 20px;" placeholder="confirm password"> </p>
+				<button style="margin-top: 20px; font-size: 25px; background-color: #00a8ff; color: white; border:0px; padding: 5px; border-radius: 20px; width: 250px; "><b>register</b></button>
+				</div>
+			</center>
+		</form>
+	</body>
+	{% endblock %}

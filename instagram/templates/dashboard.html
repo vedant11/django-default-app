@@ -1,0 +1,99 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<html lang="en">
+  <head>	
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+  <body style="background-image: linear-gradient(to right, #7b4397 , #dc2430);">
+  	<div class= "container">
+  		<div class="container1" style="display: flex; flex-direction: row; justify-content: space-around; ">
+  			<div class="subcontainer1" style="display: flex; margin-right: 300px;"><img src="https://assets.stickpng.com/images/5a4e432a2da5ad73df7efe7a.png" height="60px;"></div>
+  			<div class="subcontainer2" style="display: flex;"><p><img src="https://www.flaticon.com/svg/static/icons/svg/25/25694.svg" height=35px; width=35px; style="margin-right: 15px;">
+  				<img src="https://static.thenounproject.com/png/1228438-200.png" height=55px; width=55px; style="margin-right: 15px;">
+  				<img src="https://cdn.iconscout.com/icon/free/png-256/favorite-border-1781521-1513841.png"height=43px; width=43px; style="margin-right: 15px;" >
+  				<img src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/186_Instagram_Compass_Navigation-512.png" height=45px; width=45px; style="margin-left: 15px;">
+  				</p>
+  			</div>
+  		</div>
+  		<hr style="margin-top: 0.5px;">
+  		<center>
+  		<div>
+  			<form action="" method="post" enctype="multipart/form-data">
+  				{% csrf_token %}
+				<tr><th></th><td><input type="file" name="photo" accept="image/*" id="id_photo"></td></tr>
+				<tr><th><label for="id_title">Title:</label></th><td><input type="text" name="title" maxlength="300" id="id_title"></td></tr>
+				<tr><th><label for="id_body">Body:</label></th><td><input type="text" name="body" maxlength="1000" id="id_body"></td></tr>
+
+  				<input type="submit" class="btn btn-dange" value="Add post" style="border: solid; background-color: green; ">
+  			</form>
+  		</div>
+  		</center>
+  		<div class="sexycontainer3" style="display: flex; flex-direction: row;">
+  		<div class="row" style="width: 625px; border-width: 2px; margin-left: 70px;">
+  			{% for x in img %}
+  				<div class="card m-3">
+  					<small class="" style="font-size: 20px; text-align: center;">{{x.title}}</small>
+  					<center>
+  					<img src="{{x.photo.url}}" alt="" class="card" height="400px" width="600px">
+  					</center>
+  					<div class="card-footer">
+  					<small class="text-muted" style="text-align: center;">{{x.body}}</small><br>
+  					<div class="hitcontainer" style="'display: flex; flex-direction:row; justify-content: space-between;">
+  						<small class="text-muted">{{x.date}}</small>
+  						<form action="/instagram/like/" method="post">
+  							{% csrf_token %}
+  							<input type="text" name="image_id" value="{{x.id}}" style="display: none;">
+  							<button type="submit" style="background-color: #4cd137;">Like</button>
+  							<input type="text" name="image_id" value="{{x.id}}" style="display: none;">
+  							<button type="submit" style="background-color: red;">Unlike</button>
+  						</form>
+  					</div>
+  					<p>Likes: {{x.likes.count }}</p>
+  					<p>Unlikes: {{x.unlikes.count}}</p>
+  					</div>
+  				</div>
+  			{% endfor %}
+  		</div>
+  		<div class="super-container" style="display: flex; flex-direction: column; border:solid 2px; height: 450px; width: 400px; border-radius: 80px; margin-left: 50px; margin-top: 60px; background-color: white;">
+
+		<div class="master-container1" style="text-align: center; font-size: 30px;"><b>Suggestions</b></div>
+
+		<div class="master-container2" style="display: flex; flex-direction: row; margin-top: 40px; justify-content: space-around;">
+			<div class="container2" style="text-align: center; font-size: 20px;"><b>Bhwnesh</b></div>
+			<div class="container3"><button style="border-radius: 20px; font-size: 15px; background-color: #00a8ff;">Follow</button></div>
+		</div>
+		<hr>
+		<div class="master-container3" style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 10px;">
+			<div class="container4" style="text-align: center; font-size: 20px;"><b>Manisha</b></div>
+			<div class="container5"><button style="border-radius: 20px; font-size: 15px; background-color: #00a8ff;">Follow</button></div>
+		</div>
+		<hr>
+		<div class="master-container4" style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 10px;">
+			<div class="container6" style="text-align: center; font-size: 20px;"><b>Rashika</b></div>
+			<div class="container7"><button style="border-radius: 20px; font-size: 15px; background-color: #00a8ff;">Follow</button></div>
+		</div>
+		<hr>
+		<div class="master-container4" style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 10px;">
+			<div class="container6" style="text-align: center; font-size: 20px;"><b>Deepika</b></div>
+			<div class="container7"><button style="border-radius: 20px; font-size: 15px; background-color: #00a8ff;">Follow</button></div>
+		</div>
+		<hr>
+		<div class="master-container4" style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 10px;">
+			<div class="container6" style="text-align: center; font-size: 20px;"><b>Rajveer</b></div>
+			<div class="container7"><button style="border-radius: 20px; font-size: 15px; background-color: #00a8ff;">Follow</button></div>
+			</div>
+		</div>
+	</div>
+  	</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
+{% endblock %}
+
+ 		
