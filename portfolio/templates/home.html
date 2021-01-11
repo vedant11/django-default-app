@@ -56,14 +56,29 @@
 
 <body style="background: #FFF8F7;">
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="margin-top:5px; background: #FFF8F7;">
+    <nav class=" navbar navbar-expand-lg navbar-light bg-white" style="margin-top:5px;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="">
-            <img src="{% static 'img/logo+text.png' %}" />
+        <a class="navbar-brand" href="/portfolio/">
+            <img src="{% static 'img/logo+text.png' %}" width="150" />
         </a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link mx-3" href="/portfolio/about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-3" href="/portfolio/projects">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-3" href="/portfolio/contacts">CONTACTS</a>
+                </li>
+            </ul>
+
+        </div>
     </nav>
 
     <div class="row">
@@ -74,8 +89,8 @@
         <h1 style="margin: auto;">Nitesh Mahawar</h1>
     </div>
     <hr style="width: 10%;border:1px solid;">
-    <div class="row my-3">
-        <h5 style="margin: auto;">SOFTWARE DEVELOPMENT EXPLORATION PROGRAM</h5>
+    <div class="row my-3 m-2">
+        <h5 style="margin:auto;">SOFTWARE DEVELOPMENT EXPLORATION PROGRAM</h5>
     </div>
     <div class="row mt-5" style="width: 30%; margin:auto;">
         <div class="col-sm-4">

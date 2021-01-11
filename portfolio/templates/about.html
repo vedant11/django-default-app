@@ -1,3 +1,5 @@
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,20 +47,20 @@
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="">
-            <img src="logo+text.png" width="150" />
+        <a class="navbar-brand" href="/portfolio/">
+            <img src="{% static 'img/logo+text.png' %}" width="150" />
         </a>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link mx-3" href="./about">ABOUT</a>
+                    <a class="nav-link mx-3" href="/portfolio/about">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-3" href="./projects">PROJECTS</a>
+                    <a class="nav-link mx-3" href="/portfolio/projects">PROJECTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-3" href="./contacts">CONTACTS</a>
+                    <a class="nav-link mx-3" href="/portfolio/contacts">CONTACTS</a>
                 </li>
             </ul>
 
@@ -68,7 +70,7 @@
     <div class="container my-4">
 
         <div class="row">
-            <img src="Nitesh_profile.jpg" class="rounded-circle" alt="Profile  Image"
+            <img src="{% static 'img/Nitesh_profile.jpg' %}" class="rounded-circle" alt="Profile  Image"
                 style="height: 250px; width:250px; margin:auto; margin-top:10px;">
         </div>
 
