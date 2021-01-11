@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'portfolio',
     'instagram',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,3 +123,4 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/instagram/dashboard/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_ROOT = BASE_DIR/ 'static'
